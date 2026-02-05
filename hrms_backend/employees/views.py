@@ -31,13 +31,13 @@ class EmployeeListCreateView(APIView):
                     status=status.HTTP_400_BAD_REQUEST
                 )
 
-        # Email validation
+
         try:
             validate_email(data['email'])
         except ValidationError:
             return Response({"error": "Invalid email format"}, status=400)
 
-        # Duplicate checks
+
         if Employee.objects.filter(employee_id=data['employee_id']).exists():
             return Response({"error": "Employee ID already exists"}, status=400)
 

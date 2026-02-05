@@ -16,7 +16,7 @@ export default function EmployeeTable({ employees, onDeleteSuccess }) {
 
     try {
       await API.delete(`employees/${id}/`);
-      onDeleteSuccess(); // refresh list
+      onDeleteSuccess(); 
     } catch (err) {
       setError(getErrorMessage(err));
     } finally {

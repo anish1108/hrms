@@ -10,7 +10,7 @@ export default function Attendance() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Load employees once
+
   useEffect(() => {
     API.get("employees/")
       .then((res) => setEmployees(res.data))
@@ -43,13 +43,12 @@ export default function Attendance() {
         Attendance Records
       </h2>
 
-      {/* Mark Attendance */}
+
       <AttendanceForm
         employees={employees}
         onSuccess={() => fetchAttendance()}
       />
 
-      {/* View Attendance Section */}
       <div className="bg-white rounded-lg shadow p-6 mb-6">
         <h3 className="text-lg font-semibold mb-4">
           View Attendance by Employee
@@ -78,7 +77,6 @@ export default function Attendance() {
         </div>
       </div>
 
-      {/* States */}
       {loading && (
         <p className="text-gray-600">Loading attendance records...</p>
       )}

@@ -47,7 +47,7 @@ export default function EmployeeForm({ onSuccess }) {
         email: "",
         department: "",
       });
-      onSuccess(); // refresh list
+      onSuccess();
     } catch (err) {
       setError(getErrorMessage(err));
     } finally {
